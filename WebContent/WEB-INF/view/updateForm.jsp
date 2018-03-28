@@ -16,7 +16,8 @@
 		<b>글수정</b>
 <br>
 	<form method="post" name="writeform" action="updatePro" >
-		<input  type="hidden"   name="boardid" value="${article.boardid}">
+<!-- 수정 : ${article.boardid} -> ${boardid} -->
+		<input  type="hidden"   name="boardid" value="${boardid}">
 		<input  type="hidden"   name="num" value="${article.num}">
 		<input  type="hidden"   name="ref" value="${article.ref}">
 		<input  type="hidden"   name="re_level" value="${article.re_level}">
@@ -66,8 +67,7 @@
   				<input type="submit" value="글쓰기" >  
   				<input type="reset" value="다시작성">
 <!-- 수정 : &boardid=${boardid} -->  				
-  				<input type="button" value="목록보기" OnClick="window.location='list'">
-  				<input type="button" value="목록보기2" OnClick="window.location=list">
+  				<input type="button" value="목록보기" OnClick="window.location='list${boardid}'">
 			</td>
 		</tr>
 	</table>    

@@ -59,10 +59,11 @@ public class BoardController {
 //=======================================================================================
 	
 		//게시글 리스트 (1)  - 자유게시판
-	@RequestMapping("/list")
+//수정
+	@RequestMapping("/list1")
 	public String list(Model model) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		//
+//추가
 		String boardid = "1";
 		int pageSize = 5;
 		int currentPage = Integer.parseInt(pageNum);
@@ -91,16 +92,16 @@ public class BoardController {
 		model.addAttribute("bottomLine", bottomLine);
 		model.addAttribute("endPage", endPage);
 		model.addAttribute("number", number);
-	    
-			return "list";
+//수정 
+			return "list1";
 		}
 	
 	
-		//추가
+//추가
 		//게시글 리스트 (2) - 공지게시판
 	@RequestMapping("/list2")
 	public String list2(Model model) throws Exception {
-		//
+//추가
 		String boardid = "2";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		int pageSize = 5;
@@ -129,20 +130,21 @@ public class BoardController {
 		model.addAttribute("bottomLine", bottomLine);
 		model.addAttribute("endPage", endPage);
 		model.addAttribute("number", number);
-	    
+//수정
 			return "list2";
 		}
 	
 //=======================================================================================	
 
 		// 게시글 쓰기 Form (1)  - 자유게시판
-	@RequestMapping("/writeFormUpload") //이것은 메소드 명과 상관 없다. 뷰단과 꼭 맞춰야한다.
+//수정
+	@RequestMapping("/writeFormUpload1") //이것은 메소드 명과 상관 없다. 뷰단과 꼭 맞춰야한다.
 			//파일을 받아야하므로, 답글일 경우에는 넘,아리스타, 아리레벨을 겟방식으로 보내주기 떄문이다.
 	public ModelAndView writeFormUpload(BoardDataBean article)
 			throws Exception {
 	
 		ModelAndView mv = new ModelAndView();
-		//
+//추가
 		String boardid = "1";
 		mv.addObject("num", article.getNum());
 		mv.addObject("ref", article.getRef());
@@ -154,12 +156,13 @@ public class BoardController {
 		mv.addObject("pageNum", pageNum);
 			//ModelAndView로 바꾸는 방법이다.
 			//뷰단과 꼭 맞춰야한다.
-		mv.setViewName("writeFormUpload");
+//수정
+		mv.setViewName("writeFormUpload1");
 		return mv;
 	}
 	
 	
-		//추가
+//추가
 		//게시글 쓰기 Form (2) - 공지게시판
 	@RequestMapping("/writeFormUpload2") //이것은 메소드 명과 상관 없다. 뷰단과 꼭 맞춰야한다.
 	//파일을 받아야하므로, 답글일 경우에는 넘,아리스타, 아리레벨을 겟방식으로 보내주기 떄문이다.
@@ -167,7 +170,7 @@ public class BoardController {
 			throws Exception {
 		
 		ModelAndView mv = new ModelAndView();
-		//
+//추가
 		String boardid = "2";
 		mv.addObject("num", article.getNum());
 		mv.addObject("ref", article.getRef());
@@ -179,6 +182,7 @@ public class BoardController {
 		mv.addObject("pageNum", pageNum);
 			//ModelAndView로 바꾸는 방법이다.
 			//뷰단과 꼭 맞춰야한다.
+//수정
 		mv.setViewName("writeFormUpload2");
 		return mv;
 		}
@@ -186,7 +190,8 @@ public class BoardController {
 //=======================================================================================	
 	
 		// 게시글 쓰기 Pro (1) - 자유게시판
-	@RequestMapping("/writeProUpload")
+//수정
+	@RequestMapping("/writeProUpload1")
 	//MultipartRequest 임포트 했다가 지움
 	//기존과 WriteProUploadAction 코드가 완전 다름, 손 볼거 많음
 	//샌드리다이랙트는 스트링으로 받아야함???
@@ -195,7 +200,8 @@ public class BoardController {
 								throws Exception {
 		//기존과 완전 다름
 		//MultipartRequest 임포트가 다름 
-		
+//추가
+		String boardid = "1";
 		ModelAndView mv = new ModelAndView();
 		MultipartFile multi = request.getFile("uploadfile");
 		String filename = multi.getOriginalFilename();
@@ -217,12 +223,14 @@ public class BoardController {
 		model.addAttribute("pageNum", pageNum);
 //추가
 		model.addAttribute("boardid", boardid);
-		return "redirect:list";
+//수정
+		return "redirect:list1";
 	}
 	
 	
-		//추가
+//추가
 		//게시글 쓰기 Pro (2) - 공지게시판
+//수정
 	@RequestMapping("/writeProUpload2")
 	//MultipartRequest 임포트 했다가 지움
 	//기존과 WriteProUploadAction 코드가 완전 다름, 손 볼거 많음
@@ -275,7 +283,7 @@ public class BoardController {
 		return "content";
 	}
 	
-		//추가
+/*//추가
 		//게시글 내용보기 (2) - 공지게시판
 	@RequestMapping("/content2")
 	public String content2(int num, Model model)
@@ -287,9 +295,9 @@ public class BoardController {
 			model.addAttribute("pageNum", pageNum);	
 //추가
 			model.addAttribute("boardid", boardid);
-		 
-		return "content2";
-	}
+//수정
+			return "content2";
+	}*/
 	
 //=======================================================================================	
 	
@@ -306,7 +314,7 @@ public class BoardController {
 	}
 	
 	
-		//게시글 수정 Form (2) - 공지게시판
+/*		//게시글 수정 Form (2) - 공지게시판
 	@RequestMapping("/updateForm2")
 	public String updateForm2(int num, Model model)
 			throws Exception {
@@ -314,7 +322,7 @@ public class BoardController {
 	BoardDataBean article =  dbPro.getArticle(num, boardid, "update");
 	model.addAttribute("article", article);
 		return "updateForm2";
-	}
+	}*/
 	
 	
 //=======================================================================================
@@ -332,7 +340,7 @@ public class BoardController {
 		return "updatePro";
 	}
 	
-		//게시글 수정 Pro (2) - 공지게시판
+/*		//게시글 수정 Pro (2) - 공지게시판
 	@RequestMapping("/updatePro2")
 	public String updatePro2(BoardDataBean article, Model model)
 			throws Exception {
@@ -341,7 +349,7 @@ public class BoardController {
 	 	model.addAttribute("chk", chk);
 	 	model.addAttribute("pageNum", pageNum);	 
 		return "updatePro2";
-	}
+	}*/
 	
 //=======================================================================================
 	
@@ -361,7 +369,7 @@ public class BoardController {
 		return mv;
 	}
 	
-	//게시글 삭제 Form (2) - 공지게시판
+/*	//게시글 삭제 Form (2) - 공지게시판
 	@RequestMapping(value = "deleteForm2")
 		//value = "deleteForm" 이렇게 하면 몇개 더 할 수 있는 장점이 있다.
 		//어노테이션은 오브젝트이다. 몇개 걸려있는 것이다.
@@ -373,7 +381,7 @@ public class BoardController {
 		mv.addObject("pageNum", pageNum);
 		mv.setViewName("deleteForm2");		
 		return mv;
-	}
+	}*/
 		
 //=======================================================================================
 	
@@ -391,7 +399,7 @@ public class BoardController {
 		return mv;
 	}
 	
-	//게시글 삭제 Pro (2) - 공지게시판
+/*	//게시글 삭제 Pro (2) - 공지게시판
 		@RequestMapping(value = "deletePro2")
 		public ModelAndView deletePro2(int num, String passwd)
 				throws Exception {
@@ -401,6 +409,6 @@ public class BoardController {
 			mv.addObject("pageNum", pageNum);
 			mv.setViewName("deletePro2");
 			return mv;
-		}
+		}*/
 	
 }

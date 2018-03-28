@@ -11,8 +11,9 @@
 <div class="w3-container">
 
 <center>
-	<b>글쓰기</b>
-	<br>
+	<h4><b>공지게시판 글쓰기</b></h4>
+	<br/>
+	<br/>
 	<form method="post" name="writeform2" enctype="multipart/form-data"  
 			action="writeProUpload2" >
 		<input  type="hidden"   name="boardid" value="${boardid}">

@@ -11,7 +11,9 @@
 <body> 
 	<br>
 	<br>
-	<b>글내용 보기</b>
+	<h3><p><b>글내용 보기</b></p></h3>
+	<br/>
+	<br/>
 
 <div class="container">
 	<table class="w3-table-all"   style="width:80%;" >
@@ -36,24 +38,24 @@
    		</tr>   
     	<tr height="30">
 			<td colspan="4"  class="w3-center">
-<!-- 추가 : &boardid=${boardid} -->
+
   				<input type="button" value="글수정" 
    					onclick="document.location.href=
  					'updateForm?num=${article.num}&pageNum=${pageNum}'">
          	&nbsp;&nbsp;&nbsp;&nbsp;
-<!-- 추가 : &boardid=${boardid} -->
+
          		<input type="button" value="글삭제" 
          			onclick="document.location.href=
-					'deleteForm?num=${article.num}&pageNum=${pageNum}&boardid=${boardid}'">
+					'deleteForm?num=${article.num}&pageNum=${pageNum}'">
          	&nbsp;&nbsp;&nbsp;&nbsp;
-<!-- 추가 : &boardid=${boardid} -->
+<!-- 추가 : ${boardid} -->
          		<input type="button" value="답글쓰기" 
          onclick="document.location.href=
-         	'writeFormUpload?num=${article.num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}&pageNum=${pageNum}&boardid=${boardid}'">
+         	'writeFormUpload${boardid}?num=${article.num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}&pageNum=${pageNum}'">
          	&nbsp;&nbsp;&nbsp;&nbsp;
-<!-- 추가 : &boardid=${boardid} -->
+<!-- 추가 : ${boardid} -->
          		<input type="button" value="글목록" 
- 					onclick="document.location.href='list?pageNum=${pageNum}&boardid=${boardid}'">
+ 					onclick="document.location.href='list${boardid}?pageNum=${pageNum}'">
       		</td>   
       	</tr>     
       </table>

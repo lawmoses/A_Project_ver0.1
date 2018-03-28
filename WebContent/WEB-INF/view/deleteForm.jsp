@@ -24,13 +24,14 @@
 				<td align=center>비밀번호 :
 					<input type="password" name="passwd" size="8" maxlength="12">
 					<input type="hidden" name="num" value="${num}">
+<!-- 추가 -->
 				</td>
 			</tr>	
 			<tr height="30">
 				<td align=center><input type="submit" value="글삭제">
-<!-- 추가 : &boardid=${boardid} -->					
+<!-- 추가 : ${boardid} -->					
 					<input type="button" value="글목록" 
-						onclick="document.location.href='list?pageNum=${pageNum}'">
+						onclick="document.location.href='list${boardid}?pageNum=${pageNum}'">
 				</td>
 			</tr>
 		</table>

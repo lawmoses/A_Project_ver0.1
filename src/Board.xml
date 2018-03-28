@@ -14,7 +14,7 @@
 	 </select>
 	 
 	 
-	 <!-- list 불러오는 -->
+	 <!-- 게시글 한개 불러오는 -->
       <select id="boardList"  resultType="Board"  parameterType="hashmap">
 		select * from board
 			<if test="num != null">
@@ -26,7 +26,7 @@
 	 </select>
 	 
 	 
-	 <!-- 게시글 목록 가져오기  -->
+	 <!-- 게시글 전체 가져오기  -->
 	  <select id="getArticles"  resultType="Board"  parameterType="hashmap">
 		 select * from 
 			( select rownum rnum ,a.* 

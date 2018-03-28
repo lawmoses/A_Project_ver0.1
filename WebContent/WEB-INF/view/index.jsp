@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% response.sendRedirect(request.getContextPath()+"/board/list"); %>
+	<% response.sendRedirect(request.getContextPath()+"/board/list1"); %>
 </body>
 </html>

@@ -11,8 +11,9 @@
 
 <body>
 	<c:if test="${chk==1 }">
+<!-- ¼öÁ¤ : ${boardid } -->
 		<meta http-equiv="Refresh" 
-				content="0;url=list?pageNum=${pageNum}" >
+				content="0;url=list${boardid}?pageNum=${pageNum}" >
 	</c:if>
 	<c:if test="${chk!=1 }"> 
 		<script>

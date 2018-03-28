@@ -11,10 +11,12 @@
 <div class="w3-container">
 
 <center>
-	<b>글쓰기</b>
-	<br>
+	<h4><b>자유게시판 글쓰기</b></h4>
+	<br/>
+	<br/>
+<!-- 수정 : ${boardid } -->
 	<form method="post" name="writeform" enctype="multipart/form-data"  
-			action="writeProUpload" >
+			action="writeProUpload${boardid}" >
 		<input  type="hidden"   name="boardid" value="${boardid}">
 		<input  type="hidden"   name="num" value="${num}">
 		<input  type="hidden"   name="ref" value="${ref}">
@@ -26,7 +28,9 @@
 	<table class="w3-table-all"  style="width:50%;" >
    		<tr>
     		<td align="right" colspan="2" >
-    			<a href="list.jsp"> 글목록</a> 
+    		
+<!-- 수정 : ${boardid } -->
+    			<a href="list${boardid}"> <b>글목록</b></a> 
    			</td>
    		</tr>
    		<tr>
@@ -73,7 +77,8 @@
  			<td colspan=2  align="center"> 
   				<input type="submit" value="글쓰기" >  
   				<input type="reset" value="다시작성">
-  				<input type="button" value="목록보기" OnClick="window.location='list'">
+ <!-- 수정 : ${boardid } -->
+  				<input type="button" value="목록보기" OnClick="window.location='list${boardid}'">
 			</td>
 		</tr>
 		</table>    

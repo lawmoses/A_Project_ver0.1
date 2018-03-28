@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>공지게시판</title>
 
 <!-- 공지게시판 boardId 2번 -->
 
@@ -20,7 +20,8 @@
 	<p class="w3-right w3-padding-right-large">
 
 <!-- 수정 : writeFormUpload2 -->
-		<a href="writeFormUpload2">글쓰기</a>	<!-- writeForm -->
+<!-- 수정 : ${boardid } -->
+		<a href="writeFormUpload${boardid}">글쓰기</a>	<!-- writeForm -->
 	</p>
 
 	<c:if test="${count==0 }">
@@ -63,7 +64,7 @@
 	 			<img src="../images/level.gif"  height="16">
 			</c:if>
 			
-<!-- 수정 : content2  -->
+<!-- 수정 : ${boardid } -->
 		 		<a href="content?num=${article.num}&pageNum=${currentPage}&boardid=${boardid}">
 					${article.subject}</a> 
 

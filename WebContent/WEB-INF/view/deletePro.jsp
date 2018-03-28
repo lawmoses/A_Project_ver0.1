@@ -5,8 +5,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:if test="${check==1}">
+
+<!-- 수정 : ${boardid } 추가 -->
   <meta http-equiv="Refresh" 
-		content="0;url=list?pageNum=${pageNum}&boardid=${boardid}" >
+		content="0;url=list${boardid}?pageNum=${pageNum}" >
 </c:if>
 
 <c:if test="${check!=1}">
