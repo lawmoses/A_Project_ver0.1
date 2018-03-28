@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	
+	<!-- chap07.EventController 에서 @Controller 읽어내는 것  -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+	
+
+	<!-- 콘트롤러 자바소스 필요 없이 /index 하면 index로 보내준다. view밑에 있는 것  -->
+	<mvc:view-controller path="/index2" view-name="index2"/>
+
+
+	<!-- ??? 디폴트 핸들러로 하겠다는 것임 -->
+	<mvc:default-servlet-handler/>
+	
+	
+	<!-- @Controller 로 되어있다. -->
+	<bean class="controller.BoardController"></bean>
+<!-- 	<bean class="controller.MemberController"></bean>
+	<bean class="controller.ShopController"></bean> -->
+	
+	
+	
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+</beans>
+
+
+
+
