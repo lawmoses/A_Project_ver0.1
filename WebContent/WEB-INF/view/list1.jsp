@@ -16,8 +16,9 @@
 <div class="w3-container" style="margin: 40px 100px;">
   <h2 style="text-align: center;">자유게시판 : ${boardid} 번 (전체 글:${count})</h2>
   
-  <!--  글쓰기 버튼  -->
+<!--  글쓰기 버튼  -->
 	<p class="w3-right w3-padding-right-large">
+
 
 <!-- 수정 : writeFormUpload -->
 <!-- 수정 : ${boardid } -->
@@ -115,5 +116,7 @@
       <input type="text" size="20" name="keyWord">
       <input type="button" value="검색" onclick="mem_search(form)" />&nbsp;
    </form>
+   
+   
 </body>
 </html> 
